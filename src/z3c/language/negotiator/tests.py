@@ -17,11 +17,10 @@ $Id$
 """
 __docformat__ = 'restructuredtext'
 
+import doctest
 import unittest
 
 import zope.component
-from zope.testing import doctest
-from zope.testing.doctestunit import DocFileSuite
 
 from z3c.language.negotiator import app
 from z3c.language.negotiator import testing
@@ -157,7 +156,7 @@ def test_suite():
     return unittest.TestSuite((
         unittest.makeSuite(NegotiatorBaseTest),
         unittest.makeSuite(NegotiatorTest),
-        DocFileSuite('README.txt',
+        doctest.DocFileSuite('README.txt',
             optionflags=doctest.NORMALIZE_WHITESPACE|doctest.ELLIPSIS),
         ))
 
